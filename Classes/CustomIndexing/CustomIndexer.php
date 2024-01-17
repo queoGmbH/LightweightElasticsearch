@@ -97,6 +97,7 @@ class CustomIndexer
     {
         $this->elasticsearchClient = $this->clientFactory->create();
         $this->index = new Index($this->indexName, $this->elasticsearchClient);
+        $this->index->setSettingsKey($this->aliasName);
     }
 
     /**
