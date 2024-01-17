@@ -28,7 +28,7 @@ class SearchResult implements \IteratorAggregate, ProtectedContextAwareInterface
      * @return static
      * @internal
      */
-    public static function fromElasticsearchJsonResponse(array $response, NodeInterface $contextNode): self
+    public static function fromElasticsearchJsonResponse(array $response, NodeInterface $contextNode = null): self
     {
         return new SearchResult($response, false, $contextNode);
     }

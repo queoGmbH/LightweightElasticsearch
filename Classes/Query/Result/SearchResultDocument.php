@@ -25,6 +25,10 @@ class SearchResultDocument implements ProtectedContextAwareInterface
 
     public function loadNode(): ?NodeInterface
     {
+        if (!$this->contextNode instanceof NodeInterface) {
+            return null;
+        }
+
         $nodePath = $this->hit['_source']['neos_path'];
 
         if (is_array($nodePath)) {
